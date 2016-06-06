@@ -110,7 +110,9 @@ while true; do
 
 	if [ "$comando" == "commitaddall" ]; then
 	        git -C "./"$d add .
-		git -C "./"$d commit -a -m "$defaultCommitMessage"
+		printf "escruba n commit: "
+		read commit
+		git -C "./"$d commit -a -m "$commit"
 	fi
 
 	if [ "$comando" == "push" ]; then
